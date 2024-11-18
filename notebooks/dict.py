@@ -1,9 +1,11 @@
 import sys
 import requests
 
+
 lookup_word = sys.argv[1]
 
-url = "https://api.dictionaryapi.dev/api/v2/entries/en/{lookup_word}"
+url = f"https://api.dictionaryapi.dev/api/v2/entries/en/{lookup_word}"
+print(url)
 
-data = requests.get(url)
-print(data)
+data = requests.get(url).json()
+data
